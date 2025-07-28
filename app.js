@@ -14,6 +14,10 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
+app.get('/', (req, res) => {
+  res.send('Welcome to the Form Application API');
+});
+
 app.use('/api', formRoutes);
 
 app.use(errorHandler);
