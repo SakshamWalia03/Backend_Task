@@ -7,6 +7,12 @@ This repository contains the backend code for the Kaizen Que assignment. It is c
 You can access the live API here:  
 🔗 [https://backend-task-1q1m.onrender.com/](https://backend-task-1q1m.onrender.com/)
 
+### 📘 API Documentation (Swagger UI)
+
+Access the Swagger UI for this API here:
+
+- **Local environment:** [http://localhost:9000/api-docs](http://localhost:9000/api-docs)
+- **Production:** [https://backend-task-1q1m.onrender.com/api-docs](https://backend-task-1q1m.onrender.com/api-docs)
 
 ## Features
 

@@ -1,0 +1,98 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Form Application API",
+    "description": "API documentation for the Form Application",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://backend-task-1q1m.onrender.com/"
+    }
+    ,
+    {
+      "url":"localhost:9000"
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/form": {
+      "post": {
+        "summary": "Submit a form",
+        "tags": ["Form"],
+        "description": "Submits a user form with name, email, and message",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["fullName", "email", "message"],
+                "properties": {
+                  "fullName": {
+                    "type": "string",
+                    "example": "John Doe"
+                  },
+                  "email": {
+                    "type": "string",
+                    "example": "john@example.com"
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "Hello, I am interested in your services."
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Form submitted successfully"
+          },
+          "400": {
+            "description": "Bad Request - Missing required fields"
+          }
+        }
+      },
+      "get": {
+        "summary": "Get all submitted forms",
+        "tags": ["Form"],
+        "description": "Returns a list of all submitted forms",
+        "responses": {
+          "200": {
+            "description": "A list of forms",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": { "type": "integer", "example": 1 },
+                      "fullName": { "type": "string", "example": "John Doe" },
+                      "email": {
+                        "type": "string",
+                        "example": "john@example.com"
+                      },
+                      "message": { "type": "string", "example": "Hello there!" }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
